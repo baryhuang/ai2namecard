@@ -1,73 +1,82 @@
-# React + TypeScript + Vite
+# AI-Driven 3D Glass Namecard Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive AI-powered 3D namecard generator that transforms conversational input into stunning visual designs.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **AI-Powered Design**: Chat with Claude Sonnet 4.5 to describe your creative vision
+- **3D Glass Namecard**: Semi-transparent glass material with realistic reflections and shadows
+- **Dark Space Environment**: Futuristic black background with floor shadows
+- **Smooth Animations**: Gentle floating and limited rotation (-30° to +30°)
+- **Pattern System**: Grid, particles, waves, and circuit patterns
+- **Real-time Updates**: See your design evolve as the AI interprets your input
+- **Persistent State**: Chat history and scene saved to localStorage
 
-## React Compiler
+## 🚀 Quick Start
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Prerequisites
 
-## Expanding the ESLint configuration
+- Node.js 18+
+- InsForge account with API key
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Installation
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+```bash
+# Install dependencies
+npm install
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+# Start development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open http://localhost:5173
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
+### Build for Production
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+```bash
+npm run build
 ```
+
+## 🎮 How to Use
+
+1. The app starts with a default "HELLO - AI Powered" glass card
+2. Type creative prompts in the chat:
+   - "Make it feel like a sunset"
+   - "Add my name: Alex"
+   - "Give it cyberpunk vibes"
+   - "Calm ocean feeling"
+
+3. Watch the AI creatively interpret your vision and update the 3D scene
+
+## 🛠️ Tech Stack
+
+- **Frontend**: React 19 + TypeScript + Vite
+- **3D Graphics**: Three.js + React Three Fiber + Drei
+- **Styling**: Tailwind CSS 3.4
+- **State Management**: Zustand
+- **Backend**: InsForge (BaaS)
+- **AI**: Claude Sonnet 4.5
+
+## 📁 Project Structure
+
+```
+src/
+├── components/
+│   ├── Scene/          # Three.js 3D components
+│   ├── Chat/           # Chat interface
+│   └── Layout/         # App layout
+├── stores/             # Zustand state management
+└── services/           # InsForge & AI integration
+```
+
+## 📄 License
+
+MIT
+
+## 🙏 Credits
+
+Built with InsForge, Claude AI, and Three.js
+
+---
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
