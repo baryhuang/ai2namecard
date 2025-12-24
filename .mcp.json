@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "insforge": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@insforge/mcp@latest"
+      ],
+      "env": {
+        "API_KEY": "ik_f5c5e8d94709664457fc7edf8a537b16",
+        "API_BASE_URL": "https://tizjuia4.us-west.insforge.app"
+      }
+    }
+  }
+}
